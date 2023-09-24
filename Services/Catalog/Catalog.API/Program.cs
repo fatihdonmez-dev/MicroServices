@@ -1,7 +1,12 @@
+using Catalog.API.Services;
 using Catalog.API.Settings;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//add our services
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(Program));
