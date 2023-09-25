@@ -54,7 +54,7 @@ namespace Catalog.API.Services
             }
         }
 
-        public async Task<Response<List<ProductDto>>> GetAllByUserId(string userId)
+        public async Task<Response<List<ProductDto>>> GetAllByUserIdAsync(string userId)
         {
             var products = await _productCollection.Find<Product>(x => x.UserId == userId).ToListAsync();
 
