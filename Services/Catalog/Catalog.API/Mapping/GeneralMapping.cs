@@ -9,11 +9,14 @@ namespace Catalog.API.Mapping
         public GeneralMapping()
         {
             CreateMap<Product, ProductDto>().ReverseMap();
-            CreateMap<Category, CategoryDto>().ReverseMap();
-            CreateMap<Feature, FeatureDto>().ReverseMap();
-
             CreateMap<Product, ProductCreateDto>().ReverseMap();
             CreateMap<Product, ProductUpdateDto>().ReverseMap();
+
+            CreateMap<Category, CategoryCreateDto>().ReverseMap();
+            CreateMap<Category, CategoryDto>().ReverseMap();
+
+            CreateMap<Feature, FeatureDto>().ReverseMap();
+
         }
 
     }

@@ -28,9 +28,9 @@ namespace Catalog.API.Services
             return Response<List<CategoryDto>>.Success(_mapper.Map<List<CategoryDto>>(categories), 200);
         }
 
-        public async Task<Response<CategoryDto>> CreateAsync(CategoryDto categoryDto)
+        public async Task<Response<CategoryDto>> CreateAsync(CategoryCreateDto categoryCreateDto)
         {
-            var newCategory = _mapper.Map<Category>(categoryDto);
+            var newCategory = _mapper.Map<Category>(categoryCreateDto);
             await _categoryCollection.InsertOneAsync(newCategory);
 
             return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(newCategory), 200);
