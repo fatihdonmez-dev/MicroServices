@@ -2,6 +2,6 @@
 {
     public class FeatureDto
     {
-        public string Prop1 { get; set; }
+        public int Prop1 { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Catalog.API.Dtos
+﻿using MongoDB.Bson;
+
+namespace Catalog.API.Dtos
 {
     public class CategoryDto
     {

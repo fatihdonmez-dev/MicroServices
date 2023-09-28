@@ -15,6 +15,7 @@ namespace Catalog.API.Controllers
         {
             _productService = productService;
         }
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var response = await _productService.GetAllAsync();
@@ -22,7 +23,7 @@ namespace Catalog.API.Controllers
             return CreateActionResultInstance(response);
         }
 
-        [HttpGet("{id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
             var response = await _productService.GetByIdAsnyc(id);
@@ -30,6 +31,7 @@ namespace Catalog.API.Controllers
             return CreateActionResultInstance(response);
         }
 
+        [HttpGet]
         [Route("api/[controller]/GetAllByUserId/{userId}")]
         public async Task<IActionResult> GetByUserId(string userId)
         {
@@ -53,7 +55,7 @@ namespace Catalog.API.Controllers
 
             return CreateActionResultInstance(response);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var response = await _productService.DeleteAsync(id);

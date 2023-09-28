@@ -28,9 +28,9 @@ namespace Catalog.API.Services
             return Response<List<CategoryDto>>.Success(_mapper.Map<List<CategoryDto>>(categories), 200);
         }
 
-        public async Task<Response<CategoryDto>> CreateAsync(CategoryCreateDto categoryCreateDto)
+        public async Task<Response<CategoryDto>> CreateAsync(CategoryDto categoryDto)
         {
-            var newCategory = _mapper.Map<Category>(categoryCreateDto);
+            var newCategory = _mapper.Map<Category>(categoryDto);
             await _categoryCollection.InsertOneAsync(newCategory);
 
             return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(newCategory), 200);
@@ -41,7 +41,7 @@ namespace Catalog.API.Services
             var category = await _categoryCollection.Find<Category>(x => x.Id == id).FirstOrDefaultAsync();
             if (category == null)
             {
-                return Response<CategoryDto>.Fail("Category not founc", 404);
+                return Response<CategoryDto>.Fail("Category not found", 404);
             }
 
             return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);

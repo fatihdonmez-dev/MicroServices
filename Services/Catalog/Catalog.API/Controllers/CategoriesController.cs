@@ -16,13 +16,14 @@ namespace Catalog.API.Controllers
             _categoryService = categoryService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var response = await _categoryService.GetAllAsync();
             return CreateActionResultInstance(response);
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
             var response = await _categoryService.GetByIdAsync(id);
@@ -31,11 +32,12 @@ namespace Catalog.API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
+        public async Task<IActionResult> Create(CategoryDto categoryDto)
         {
-            var response = await _categoryService.CreateAsync(categoryCreateDto);
+            var response = await _categoryService.CreateAsync(categoryDto);
 
             return CreateActionResultInstance(response);
+
         }
 
         [HttpPut]
@@ -45,7 +47,7 @@ namespace Catalog.API.Controllers
 
             return CreateActionResultInstance(response);
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var response = await _categoryService.DeleteAsync(id);
@@ -54,3 +56,4 @@ namespace Catalog.API.Controllers
         }
     }
 }
+    

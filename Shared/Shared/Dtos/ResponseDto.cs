@@ -34,7 +34,7 @@ namespace Shared.Dtos
 
         public static Response<T> Fail(string error,int statusCode) 
         {
-            return new Response<T> { Errors = {error}, StatusCode = statusCode,IsSuccessful = false};
+            return new Response<T> { Errors = new List<string>() { error }, StatusCode = statusCode, IsSuccessful = false };
         }
 
     }
