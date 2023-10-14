@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Cat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{231D3772-9BBA-46D2-8736-D935B93E077C}"
 	ProjectSection(SolutionItems) = preProject
+		docker_notes.txt = docker_notes.txt
 		Ports.txt = Ports.txt
 	EndProjectSection
 EndProject
@@ -32,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Services\Bask
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{BD36F63B-6DA3-4147-82F2-04D9B8CC4F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.API", "Services\Discount\Discount.API\Discount.API.csproj", "{BA659F1A-98AD-4932-8906-0C85E1068D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.API", "Services\Discount\Discount.API\Discount.API.csproj", "{BA659F1A-98AD-4932-8906-0C85E1068D70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
