@@ -14,6 +14,7 @@ namespace Order.Domain.OrderAggregate
         public string PictureUrl { get; private set; }
         public Decimal Price { get; private set; }
 
+        public OrderItem() { }
         public OrderItem(string productId, string productName, string pictureUrl, decimal price)
         {
             ProductId = productId;
@@ -22,7 +23,7 @@ namespace Order.Domain.OrderAggregate
             Price = price;
         }
 
-        public void UpdateOrderItem(string productName,string pictureUrl,decimal price)
+        public void UpdateOrderItem(string productName, string pictureUrl, decimal price)
         {
             ProductName = productName;
             PictureUrl = pictureUrl;
