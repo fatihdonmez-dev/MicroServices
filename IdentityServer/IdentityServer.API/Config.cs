@@ -18,6 +18,7 @@ namespace IdentityServer.API
             new ApiResource("resource_basket"){Scopes = {"basket_fullpermission"}},
             new ApiResource("resource_discount"){Scopes = {"discount_fullpermission","discount_read", "discount_write"}},
             new ApiResource("resource_order"){Scopes = {"order_fullpermission"}},
+            new ApiResource("resource_payment"){Scopes = {"payment_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -40,6 +41,7 @@ namespace IdentityServer.API
                    new ApiScope("discount_read","Discount API okuma yetkisi"),
                    new ApiScope("discount_write","Discount API yazma yetkisi"),
                    new ApiScope("order_fullpermission","Order API Full erişim yetkisi"),
+                   new ApiScope("payment_fullpermission","Payment API Full erişim yetkisi"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -62,7 +64,7 @@ namespace IdentityServer.API
                     AllowOfflineAccess = true,
                     ClientSecrets={new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes = { "basket_fullpermission","order_fullpermission", "discount_fullpermission",
+                    AllowedScopes = { "basket_fullpermission","order_fullpermission", "discount_fullpermission","payment_fullpermission",
                         IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName, "roles"},
                     AccessTokenLifetime= 1*60*60,
                     RefreshTokenExpiration = TokenExpiration.Absolute,
