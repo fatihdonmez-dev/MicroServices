@@ -19,6 +19,7 @@ namespace IdentityServer.API
             new ApiResource("resource_discount"){Scopes = {"discount_fullpermission","discount_read", "discount_write"}},
             new ApiResource("resource_order"){Scopes = {"order_fullpermission"}},
             new ApiResource("resource_payment"){Scopes = {"payment_fullpermission"}},
+            new ApiResource("resource_gateway"){Scopes = {"gateway_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -36,12 +37,13 @@ namespace IdentityServer.API
             {
                 new ApiScope("catalog_fullpermission","Catalog API Full erişim yetkisi"),
                 new ApiScope("photo_stock_fullpermission","Photo Stock API Full erişim yetkisi"),
-                   new ApiScope("basket_fullpermission","Basket API Full erişim yetkisi"),
-                   new ApiScope("discount_fullpermission","Discount API Full erişim yetkisi"),
-                   new ApiScope("discount_read","Discount API okuma yetkisi"),
-                   new ApiScope("discount_write","Discount API yazma yetkisi"),
-                   new ApiScope("order_fullpermission","Order API Full erişim yetkisi"),
-                   new ApiScope("payment_fullpermission","Payment API Full erişim yetkisi"),
+                new ApiScope("basket_fullpermission","Basket API Full erişim yetkisi"),
+                new ApiScope("discount_fullpermission","Discount API Full erişim yetkisi"),
+                new ApiScope("discount_read","Discount API okuma yetkisi"),
+                new ApiScope("discount_write","Discount API yazma yetkisi"),
+                new ApiScope("order_fullpermission","Order API Full erişim yetkisi"),
+                new ApiScope("payment_fullpermission","Payment API Full erişim yetkisi"),
+                new ApiScope("gateway_fullpermission","Gateway Full erişim yetkisi"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -54,7 +56,7 @@ namespace IdentityServer.API
                     ClientId= "WebMvcClient",
                     ClientSecrets={new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = { "catalog_fullpermission", "photo_stock_fullpermission",IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes = { "catalog_fullpermission", "photo_stock_fullpermission", "gateway_fullpermission",IdentityServerConstants.LocalApi.ScopeName }
                 },
 
                 new Client
@@ -64,7 +66,8 @@ namespace IdentityServer.API
                     AllowOfflineAccess = true,
                     ClientSecrets={new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes = { "basket_fullpermission","order_fullpermission", "discount_fullpermission","payment_fullpermission",
+                    AllowedScopes = { "basket_fullpermission","order_fullpermission", "discount_fullpermission",
+                        "payment_fullpermission", "gateway_fullpermission",
                         IdentityServerConstants.StandardScopes.Email, IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName, "roles"},
                     AccessTokenLifetime= 1*60*60,
                     RefreshTokenExpiration = TokenExpiration.Absolute,
