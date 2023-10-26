@@ -11,4 +11,4 @@ API içerik ve teknolojileri;
  - Basket API: Redis
  - Order API: SqlServer, EF Migration, DDD design pattern, MediatR package, Automapper
 
-Proje içeriği Fatih Çakıroğlu Udemy microservices eğitimi izlenerek oluşturulmuştur. Benzer materyaller içerir.
+Kaynak eğitim: https://www.udemy.com/course/net-ile-microservices/
