@@ -6,7 +6,7 @@ namespace Web.Services.Interfaces
 {
     public interface IIdentityService
     {
-        Task<Response<bool>> SignIn(SignInInput signInInput);
+        Task<Response<bool>> SignIn(SigninInput signInInput);
         Task<TokenResponse> GetAccessTokenByRefreshToken();
         Task RevokeRefreshToken();
     }

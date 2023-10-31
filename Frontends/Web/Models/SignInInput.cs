@@ -2,7 +2,7 @@
 
 namespace Web.Models
 {
-    public class SignInInput
+    public class SigninInput
     {
         [Display(Name ="Email adresiniz")]
         public string Email { get; set; }
